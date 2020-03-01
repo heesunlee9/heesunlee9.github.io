@@ -1,0 +1,525 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.18.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Fundamental Limitations of Deep Learning and Solutions - Heesun Lee</title>
+<meta name="description" content="I am skeptical of the fundamental methodologies of deep learning. I will review the main limitations of deep learning, and their solutions. ">
+
+
+  <meta name="author" content="Heesun Lee">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Heesun Lee">
+<meta property="og:title" content="Fundamental Limitations of Deep Learning and Solutions">
+<meta property="og:url" content="http://localhost:4000/blog/Fundamental-limitations-of-deep-learning-and-solutions/">
+
+
+  <meta property="og:description" content="I am skeptical of the fundamental methodologies of deep learning. I will review the main limitations of deep learning, and their solutions. ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-03-01T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2019-04-13T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Fundamental-limitations-of-deep-learning-and-solutions/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Heesun Lee",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Heesun Lee Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Heesun Lee
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/bookmarks/" >Bookmarks</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Heesun Lee</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>software fan. csheesun at gmail dot com</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:csheesun@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+            <li><a href="https://heesunlee9.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/heesunlee9/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/leeheesuncs/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Linkedin</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Fundamental Limitations of Deep Learning and Solutions">
+    <meta itemprop="description" content="I am skeptical of the fundamental methodologies of deep learning. I will review the main limitations of deep learning, and their solutions.">
+    <meta itemprop="datePublished" content="2020-03-01T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2019-04-13T22:06:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Fundamental Limitations of Deep Learning and Solutions
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://drive.google.com/file/d/1fxqZGX4iVP0l-T4mLQl-otNEgeNQTOas/view?usp=sharing">PDF</a></p>
+
+<p>I wrote this paper out of personal interest.</p>
+
+<p>I am skeptical of the fundamental methodologies of deep learning. I will review the main limitations of deep learning, and their solutions.</p>
+
+<p>According to Deep Learning: A Critical Appraisal by Gary Marcus, deep learning has some fun-damental  defects.   Fundamentally,  it  lacks  adaptability.   Specifically,  deep  learning  models  have difficulty in dealing with deviations.  We put data into a model and have the model optimize itself. We repeat this process until we get satisfactory results.  If a certain model has not been trained by specific examples, a test set differs from a training data set or some conditions change, the failure rate increases drastically.  Besides, current deep learning methods based on math and statistics areironic.  Although we may have no mathematical errors in the process of training, we may discover basic errors which humans may not have made.  Also, deep learning is not good at using contextual information when discerning objects.</p>
+
+<p>The above trial-and-error strategy may be especially unsuitable for embedded software with a limited specification, safety-critical software, and real-time systems.  Even in a desktop environment, neural network computation takes substantial time to generate meaningful results.  Thus, embedded software may have less operational speed due to such computations.  Also, in safety-criticalor  real-time  systems,  we  do  not  have  much  time  to  garner  a  large  amount  of  data  in  advance,preprocess the data, optimize it, and examine the results.  It may lead to an unexpected situation. What I am seeking are solutions on how to build reliable, fit for purpose applications.</p>
+
+<p>Marcus  proposes  unsupervised  learning  as  an  alternative  to  the  above  problems.   Similarly,  hepresents replacing labeled data sets with things such as videos that change over time.  He addsthat one problem of deep learning is that it requires a large number of data sets.  We especiallyneed such data in supervised learning and we have to add labels to each training data set.  On theother hand, unsupervised learning is convenient in that we need less data and do not have to label it.</p>
+
+<p>The lack of need for labels is a significant advantage of unsupervised learning.  However, unsuper-vised learning may not be a fundamental solution.  Let us say we develop an application and it fits well with supervised learning.  Do we have to use unsupervised learning in that situation?  Also,unsupervised learning still needs a substantial amount of data.  It is also important to evaluate efficiency when replacing labels with videos or frames. According to Marcus, frames in the videowork as labels.  Nonetheless, if we process a high-volume video, it may take too much time andcomputing resources to train data using frames.  For this reason, using conventional labels can bemore profitable in some cases.</p>
+
+<p>Marcus  then  suggests  another  alternative  may  be  to  integrate  deep  learning,  which  is  good  atclassification, with symbolic systems, which excel at inference and abstraction.  This ‘hybrid model’ may be a more plausible idea than the solutions already discussed.  The advantages of symbolicsystems may partially prevent a model from giving absurd results.  Also, Marcus contends that it would be valuable to integrate microprocessor-like operations into neural networks, more closely approximating the structure of the human brain.  In detail, we may set Python classes for eachbrain area and make each class process our data according to their role.  In this case, we may escape from the current input layer-hidden layer-output layer simplicity of neural network structure.  We may  also  resolve  some  difficulties  of  deep  learning  such  as  debuggability,  interpretability,  and open-ended inference.</p>
+
+<p>Marcus also contends that we can gain insight from cognitive science and developmental psychologyas well as from statistics.  What matters is how to teach human knowledge to computers.  Let usassume that we understood how a human develops common sense knowledge and integrates it intotheir existing thinking system.  In the end, it would be important to determine how to translate our knowledge into algorithms and programming languages which our computers can understand.The challenge is that the human thinking process is too complex to apply to a neural network withweight and bias.  In this regard,  combining microprocessor-like operations with neural networkscan be a more intuitive way to manifest human cognitive function.</p>
+
+<p>Unless  we  come  up  with  a  breakthrough  to  the  above  limitations,  full-service  artificial  general intelligence might be a mere fantasy.  From this point of view, focusing on what computers and humans can do well may be a more productive aspiration.  Computers are good at multitasking and complicated, massive computations.  Humans are good at abstraction, generalization, and real-time logical inference.  We may have computers perform computations and integrate our knowledge with the results to make a final judgment.  To sum up, we have to define exactly what expectations we can reasonably have for artificial intelligence.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-04-13">April 13, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Fundamental+Limitations+of+Deep+Learning+and+Solutions%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FFundamental-limitations-of-deep-learning-and-solutions%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FFundamental-limitations-of-deep-learning-and-solutions%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FFundamental-limitations-of-deep-learning-and-solutions%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/blog/My-research-Plan-(video)/" class="pagination--pager" title="My Research Plans (video and presentation)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/django_tutorial/" rel="permalink">Django Tutorials
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  9 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Django Tutorials
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/My-research-Plan-(video)/" rel="permalink">My Research Plans (video and presentation)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I talked about my brief research plans in a Korea University Toastmasters Meeting on January 16, 2020.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Heesun Lee. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
