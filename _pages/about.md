@@ -10,7 +10,7 @@ layout: single
 
 [CV](https://drive.google.com/file/d/1w5dEStYe90QJWTjXQ6ZOTMceKWbA5osX/view?usp=sharing) 
 
-[Transcripts](https://drive.google.com/file/d/1aI_vzWX5Nz9To4Oh6Ihpd8_2SIaF0As9/view?usp=sharing)
+[Duolingo Test(120)](https://certs.duolingo.com/d8ysu4c3)
 
 I start a computer science master's program in the United States on Fall 2020.  
 I received formal acceptance emails from two other graduate schools, one with a 40 percent scholarship offer.  
