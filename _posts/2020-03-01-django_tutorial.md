@@ -9,7 +9,7 @@ tags:
 last_modified_at: 2019-04-13T08:06:00-05:00
 ---
 
-함수들 쓴이유. 원래는 유저이름으로 로그인하는데 유리는 유저이름 자리에 이메일 넣는다. 그래서 써준다.  
+<!-- 함수들 쓴이유. 원래는 유저이름으로 로그인하는데 유리는 유저이름 자리에 이메일 넣는다. 그래서 써준다.  
 
 _create_user : 이 클래스 내에서만 사용!
 create_user :  밖에서 호출가능 
@@ -960,4 +960,4 @@ python manage.py runserver
 > python manage.py runserver createsuperuser
 
 EMPLOYEES 가 보여야 함 
-안보이면 시간차 두고 다시 들어오기 
+안보이면 시간차 두고 다시 들어오기  -->
