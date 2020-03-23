@@ -102,8 +102,8 @@ username = request.POST['username'] 이렇게 했음
 기본값 None 넣어준다. 
 
 비밀번호 불일치 체크하기 
-if password != re_password:
-  return HttpResponse('비밀번호가 다릅니다') => 화면이 바뀌니 불편
+# if password != re_password:
+#  return HttpResponse('비밀번호가 다릅니다') => 화면이 바뀌니 불편
 한 화면에 비밀번호 불일치 뜨게 바꾸기 
 views.py 에서 추가, html 에 글자공간 만들기 
 
@@ -418,8 +418,8 @@ views.py 의 코드를 템플릿 안으로 옮길 수 있다.
 
 def home(request):
 user_id = request.session.get('user')
-if user_id:
-  fcuser - Fcuser.objects.get(pk=user_id)
+# if user_id:
+#  fcuser - Fcuser.objects.get(pk=user_id)
 
 return render(request, 'home.html')
 
@@ -564,7 +564,7 @@ board 가 생성되서 저장되면 id 가 생성된다. (pk 로 사용했던거
 id 값이 생성된 뒤에 사용할 수 있다. 
 
 글쓰기 할 때 있는 태그와 없는 태그를 같이 써서 실험 
-admin 에 가보면 없던 태그가 생성되어 있고, 내가 쓴 태그에 표시되어 있다. 
+admin 에 가보면 없던 태그가 생성되어 있고, 내가 쓴 태그들에 표시가 되어 있다. 
 
 29. 배포 - 01. 배포를 위한 Django 설정
 settings.py 에서   
@@ -591,13 +591,11 @@ Files -> upload files
 > open bash console here
 > upzip fc_community.zip
 > virtualenv 만들고 켜기 
->> virtualenv --python=python3.7 fc_env
 > pip install django
 > cd fc_community
 > 스태틱 파일 수집 
 > python manage.py collectstatic (스태틱 파일 모으기)
 > python manage.py migrate 
->> db 를 같이 올리면 생성되는게 적을 거임 
 > exit
 
 
