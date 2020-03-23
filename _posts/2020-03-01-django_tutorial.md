@@ -418,15 +418,15 @@ views.py 의 코드를 템플릿 안으로 옮길 수 있다.
 
 def home(request):
 user_id = request.session.get('user')
-# if user_id:
-#  fcuser - Fcuser.objects.get(pk=user_id)
+<!-- # if user_id:
+#  fcuser - Fcuser.objects.get(pk=user_id) -->
 
 return render(request, 'home.html')
 
 <수정 후>
 home.html
-{% if request.session.user %}
-{% else %}
+<!-- {% if request.session.user %}
+{% else %} -->
 
 게시물 링크
 board_list.html 글쓰기 버튼 
@@ -448,12 +448,12 @@ raise 할 때 어떻게 알게 된거임? (8분 12)
 그래서 ValueError 라고 함  
 
 후반부 
-{% if form.password.errors %} // errors 는 이 안에서 발생하는 모든 에러를 가지고 있다. 
+<!-- {% if form.password.errors %} // errors 는 이 안에서 발생하는 모든 에러를 가지고 있다. 
 validator 안에 여러개 넣을 수 있었다. 여러개의 validaotor 의 유효성 검사 다 통과하지 못했다면 에러들이 다 추가가 되는데 
 우리는 에러를 하나만 관리한다. 
 {% endif %}
 {{ form.password.errors.0 }} 
-// 하나라도 에러가 있으면 첫번째(0) 에러를 출력하겠다. 
+// 하나라도 에러가 있으면 첫번째(0) 에러를 출력하겠다.  -->
 
 
 
@@ -790,7 +790,7 @@ DJANGO 에는 기본키로 id 가 디폴트로 지정되어 있다.
 
 로그인 기능을 검증하기 위해서
 
- 1) superuser 를 만들거나 
+1) superuser 를 만들거나 
 2) 파이썬 shell 들어가서 import user, user objects, create 해서 유저 만든다. 
 우리는 1) 한다. 
 
