@@ -1,9 +1,9 @@
 # main links
 main:
-  - title: "About"
-    url: /about/
-  - title: "Bookmarks"
-    url: /bookmarks/
+  - title: "About me"
+    url: /aboutme/
+  - title: "Publications"
+    url: /publicationss/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
