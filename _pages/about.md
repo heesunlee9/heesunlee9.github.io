@@ -1,6 +1,6 @@
 ---
 title: "Heesun Lee"
-permalink: /about/
+permalink: /aboutme/
 toc_sticky: true
 toc_ads : true
 layout: single
@@ -8,9 +8,7 @@ layout: single
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/images/heesunlee.jpg)
 
-[CV](https://drive.google.com/file/d/1w5dEStYe90QJWTjXQ6ZOTMceKWbA5osX/view?usp=sharing) 
-
-[Duolingo Test(120)](https://certs.duolingo.com/d8ysu4c3)
+<h1>[CV](https://drive.google.com/file/d/12gd10ZMpJgxNQoi4Siz2Ap-VNSsmB5CD/view?usp=sharing)
 
 I start a computer science master's program in the United States on Fall 2020.  
 I received formal acceptance emails from two other graduate schools, one with a 40 percent scholarship offer.  
